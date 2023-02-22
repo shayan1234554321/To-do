@@ -3,11 +3,13 @@ import './style.css';
 import trash from '../public/trash.png';
 import { Load } from './local-storage.js';
 import { create, update, Delete } from './CRUD.js';
+import { handleComplete, clearAllComplete } from './interactions.js';
 
 // --------------------------- Variables --------------------------
 
 const list = document.getElementById('list');
 const form = document.getElementById('form');
+const deleteCompleted = document.getElementById('deleteCompleted');
 const tasks = { array: [] };
 
 // --------------------------- functions --------------------------
@@ -18,12 +20,6 @@ const addAllTasksToHTML = () => {
     // ------ Adding tasks according to index ------
 
     const task = tasks.array.find((task) => task.index === i);
-    // ------ checkbox ------
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.className = 'checkbox';
-    checkbox.checked = task.completed;
 
     // ------ Input ------
 
@@ -41,6 +37,22 @@ const addAllTasksToHTML = () => {
       span.className = 'completed';
       input.className = 'completedInput';
     }
+
+    /* eslint-disable no-inner-declarations */
+    function checked() {
+      span.classList.toggle('completed');
+      input.classList.toggle('completedInput');
+    }
+
+    // ------ checkbox ------
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'checkbox';
+    checkbox.checked = task.completed;
+    checkbox.addEventListener('change', (e) => {
+      handleComplete(tasks, task.index, e.target.checked, checked);
+    });
 
     // ------ Delete icon ------
 
@@ -70,3 +82,7 @@ form.addEventListener('submit', ((e) => {
   e.preventDefault();
   create(tasks, addAllTasksToHTML);
 }));
+
+deleteCompleted.addEventListener('click', () => {
+  clearAllComplete(tasks, addAllTasksToHTML);
+});
