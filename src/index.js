@@ -47,23 +47,6 @@ const addAllTasksHTML = () => {
     li.appendChild(img);
     list.appendChild(li);
   }
-  // tasks.forEach((task) => {
-  //   const li = document.createElement('li');
-  //   const input = document.createElement('input');
-  //   input.type = 'checkbox';
-  //   input.className = 'checkbox';
-  //   input.checked = task.completed;
-  //   const p = document.createElement('p');
-  //   p.innerHTML = task.description;
-  //   if (task.completed) p.className = 'completed';
-  //   const img = document.createElement('img');
-  //   img.src = trash;
-  //   img.className = 'trash';
-  //   li.appendChild(input);
-  //   li.appendChild(p);
-  //   li.appendChild(img);
-  //   list.appendChild(li);
-  // });
 };
 
 // --------------------------- event listeners --------------------------
