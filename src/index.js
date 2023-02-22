@@ -10,17 +10,17 @@ const tasks = [
   {
     description: 'Clean my room',
     completed: true,
-    index:2
+    index: 2,
   },
   {
     description: 'Take a bath',
     completed: false,
-    index:1
+    index: 1,
   },
   {
     description: 'Wash my clothes',
     completed: false,
-    index:3
+    index: 3,
   },
 ];
 
@@ -28,9 +28,8 @@ const tasks = [
 
 const addAllTasksHTML = () => {
   list.innerHTML = '';
-  for(let i = 1 ; i <= tasks.length ; i++){
-    let task = tasks.find((task)=> task.index === i )
-    console.log(task)
+  for (let i = 1; i <= tasks.length; i += 1) {
+    const task = tasks.find((task) => task.index === i);
     const li = document.createElement('li');
     const input = document.createElement('input');
     input.type = 'checkbox';
