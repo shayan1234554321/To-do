@@ -1,8 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #888;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+:root {
+  --font1: 'Poppins', sans-serif;
+  --bg-color: #252525;
+  --outer-shadow: -5px -5px 10px rgba(255, 255, 255, 0.079), 5px 5px 10px rgba(0, 0, 0, 0.21);
+  --inner-shadow: -5px -5px 10px rgba(255, 255, 255, 0.079), 5px 5px 10px rgba(0, 0, 0, 0.21);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-.hello {
+body {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font1);
+  background-color: var(--bg-color);
+  color: white;
+  padding-top: 60px;
+}
+
+header {
+  font-size: 40px;
+}
+
+form {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: var(--outer-shadow);
+  margin: 30px 0;
+}
+
+form input {
+  width: 300px;
+  background-color: var(--bg-color);
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: var(--outer-shadow), inset 0 0 15px rgba(0, 0, 0, 0.371);
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.656);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  color: rgb(118, 175, 255);
+  border: 2px solid rgb(11, 112, 255);
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+ul {
+  width: 90%;
+  max-width: 800px;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  box-shadow: var(--inner-shadow);
+  border-radius: 7px;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+ul li input[type=checkbox] {
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+}
+
+ul li .trash {
+  margin-left: auto;
+}
+
+ul li p {
+  position: relative;
+}
+
+ul li .completed::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  background-color: white;
+}
+
+.deleteBtnContainer {
+  width: 90%;
+  max-width: 800px;
+}
+
+.deleteCompleted {
+  border-color: red;
   color: red;
+  font-size: 16px;
 }

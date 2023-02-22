@@ -25,34 +25,35 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Name] <a name="about-project"></a>
+# 📖 [To do List] <a name="about-project"></a>
 
-> 
+> Design and develop a dynamic to-do list web application using HTML and CSS, allowing users to add, edit, delete, and prioritize tasks with an intuitive and visually appealing user interface.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> 
+> HTMl and CSS
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href=""></a></li>
+    <li><a href="">HTML</a></li>
+    <li><a href="">CSS</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href=""></a></li>
+    <li><a href="">No server</a></li>
   </ul>
 </details>
 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href=""></a></li>
+    <li><a href="">No database</a></li>
   </ul>
 </details>
 
@@ -60,7 +61,12 @@
 
 ### Key Features <a name="key-features"></a>
 
-> 
+> Save your Tasks
+> Edit your Tasks
+> Delete your Tasks
+> complete your Tasks
+> Prioritize your Tasks
+> Filter your Tasks
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -88,7 +94,7 @@ A browser
 
 Clone this repository to your desired folder:
 
-git clone https://github.com/shayan1234554321/Portfolio_.git
+git clone https://github.com/shayan1234554321/To-do.git
 
 ### Install
 
@@ -100,11 +106,11 @@ npm i
 
 To run the project, execute the following command:
 
-Directly open index.html
+npm start
 
 ### Run tests
 
-No tests
+Linter tests added
 
 ### Deployment
 
@@ -118,8 +124,6 @@ Get a hosting website and give all of the github files
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 Shayan
 
 - GitHub: [@githubhandle](https://github.com/shayan1234554321)
@@ -132,7 +136,11 @@ Get a hosting website and give all of the github files
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> No features in near future
+> Deleting tasks option
+> Creating tasks option
+> Editing tasks option
+> Prioritizing tasks option
+> Filtering tasks option
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -140,7 +148,7 @@ Get a hosting website and give all of the github files
 
 ## 🤝 Contributing <a name="contributing"></a>
 
-You can contribute to this project by writing an issue <a href="https://github.com/shayan1234554321/webpack_template/issues" >here</a>
+You can contribute to this project by writing an issue <a href="https://github.com/shayan1234554321/To-do/issues" >here</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +156,7 @@ You can contribute to this project by writing an issue <a href="https://github.c
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please leave a 
+If you like this project please leave a ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -156,7 +164,7 @@ If you like this project please leave a
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse and youtube for help
+I would like to thank Microverse and Youtube for help
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

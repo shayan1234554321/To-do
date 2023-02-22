@@ -6,6 +6,23 @@
     <title>Webpack Exercise</title>
 </head>
 <body>
-    
+    <header>Manage Your Tasks</header>
+    <form>
+        <input type="text" placeholder="Add a task" required>
+        <button>CREATE</button>
+    </form>
+    <ul class="list" id="list">
+        <!-- list items added from js with this formate
+        <li>
+            <input class="checkbox" type="text">
+            <p class="completed? completed" >Some Text </p>
+            <img class="trash" src="" alt="" class="deleteIcon">
+        </li> -->
+    </ul>
+    <div class="deleteBtnContainer">
+        <button class="deleteCompleted" id="deleteCompleted">
+            Delete completed
+        </button>
+    </div>
 </body>
 </html>

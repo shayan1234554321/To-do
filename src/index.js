@@ -1,14 +1,73 @@
-import _ from 'lodash';
+// --------------------------- import --------------------------
 import './style.css';
+import trash from '../public/trash.png';
 
-function component() {
-    const element = document.createElement('div');
-  
-    // Lodash, now imported by this script
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    element.classList.add('hello');
-    
-    return element;
+// --------------------------- Variables --------------------------
+
+const list = document.getElementById('list');
+
+const tasks = [
+  {
+    description: 'Clean my room',
+    completed: true,
+    index:2
+  },
+  {
+    description: 'Take a bath',
+    completed: false,
+    index:1
+  },
+  {
+    description: 'Wash my clothes',
+    completed: false,
+    index:3
+  },
+];
+
+// --------------------------- functions --------------------------
+
+const addAllTasksHTML = () => {
+  list.innerHTML = '';
+  for(let i = 1 ; i <= tasks.length ; i++){
+    let task = tasks.find((task)=> task.index === i )
+    console.log(task)
+    const li = document.createElement('li');
+    const input = document.createElement('input');
+    input.type = 'checkbox';
+    input.className = 'checkbox';
+    input.checked = task.completed;
+    const p = document.createElement('p');
+    p.innerHTML = task.description;
+    if (task.completed) p.className = 'completed';
+    const img = document.createElement('img');
+    img.src = trash;
+    img.className = 'trash';
+    li.appendChild(input);
+    li.appendChild(p);
+    li.appendChild(img);
+    list.appendChild(li);
   }
-  
-  document.body.appendChild(component());
+  // tasks.forEach((task) => {
+  //   const li = document.createElement('li');
+  //   const input = document.createElement('input');
+  //   input.type = 'checkbox';
+  //   input.className = 'checkbox';
+  //   input.checked = task.completed;
+  //   const p = document.createElement('p');
+  //   p.innerHTML = task.description;
+  //   if (task.completed) p.className = 'completed';
+  //   const img = document.createElement('img');
+  //   img.src = trash;
+  //   img.className = 'trash';
+  //   li.appendChild(input);
+  //   li.appendChild(p);
+  //   li.appendChild(img);
+  //   list.appendChild(li);
+  // });
+};
+
+// --------------------------- event listeners --------------------------
+
+window.addEventListener('DOMContentLoaded', () => {
+  addAllTasksHTML();
+});
