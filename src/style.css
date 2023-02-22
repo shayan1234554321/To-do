@@ -102,8 +102,9 @@ ul li input[type=text] {
   position: relative;
 }
 
-ul li .more {
+ul li .trash {
   margin-left: auto;
+  cursor: pointer;
 }
 
 ul li .completed {
