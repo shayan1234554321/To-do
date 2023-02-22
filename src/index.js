@@ -1,6 +1,6 @@
 // --------------------------- import --------------------------
 import './style.css';
-import trash from '../public/trash.png';
+import more from '../public/more.svg';
 
 // --------------------------- Variables --------------------------
 
@@ -31,18 +31,24 @@ const addAllTasksHTML = () => {
   for (let i = 1; i <= tasks.length; i += 1) {
     const task = tasks.find((task) => task.index === i);
     const li = document.createElement('li');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'checkbox';
+    checkbox.checked = task.completed;
     const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.className = 'checkbox';
-    input.checked = task.completed;
-    const p = document.createElement('p');
-    p.innerHTML = task.description;
-    if (task.completed) p.className = 'completed';
+    input.type = "text"
+    input.value = task.description;
+    const span = document.createElement('span')
+    if(task.completed) {
+      span.className = "completed"
+      input.className = "completedInput"
+    }
     const img = document.createElement('img');
-    img.src = trash;
-    img.className = 'trash';
+    img.src = more;
+    img.className = 'more';
+    li.appendChild(checkbox);
     li.appendChild(input);
-    li.appendChild(p);
+    li.appendChild(span);
     li.appendChild(img);
     list.appendChild(li);
   }

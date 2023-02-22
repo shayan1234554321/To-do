@@ -20,9 +20,10 @@
 
 :root {
   --font1: 'Poppins', sans-serif;
-  --bg-color: #252525;
+  --bg-color: #e9e9e9;
   --outer-shadow: -5px -5px 10px rgba(255, 255, 255, 0.079), 5px 5px 10px rgba(0, 0, 0, 0.21);
   --inner-shadow: -5px -5px 10px rgba(255, 255, 255, 0.079), 5px 5px 10px rgba(0, 0, 0, 0.21);
+  --border-bottom: 1px solid rgba(0, 0, 0, 0.119);
 }
 
 /* Handle on hover */
@@ -37,111 +38,102 @@
 
 body {
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  font-family: var(--font1);
+  justify-content: center;
   background-color: var(--bg-color);
-  color: white;
-  padding-top: 60px;
+  font-family: var(--font1);
+}
+
+.container {
+  background-color: white;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
 }
 
 header {
-  font-size: 40px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-bottom);
+  padding-bottom: 20px;
+  padding: 20px;
+}
+
+header .icon{
+  margin-left: auto;
 }
 
 form {
-  width: 90%;
-  max-width: 800px;
+  width: calc(100% - 40px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  border-radius: 7px;
-  box-shadow: var(--outer-shadow);
-  margin: 30px 0;
+  border-bottom: var(--border-bottom);
 }
 
 form input {
-  width: 300px;
-  background-color: var(--bg-color);
   border: none;
   outline: none;
-  color: white;
-  padding: 10px;
-  border-radius: 7px;
-  box-shadow: var(--outer-shadow), inset 0 0 15px rgba(0, 0, 0, 0.371);
+  font-style: italic;
   font-size: 16px;
 }
 
-input::placeholder {
-  color: rgba(255, 255, 255, 0.656);
-}
-
-button {
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0);
-  outline: none;
-  color: rgb(118, 175, 255);
-  border: 2px solid rgb(11, 112, 255);
-  border-radius: 7px;
-  font-weight: 600;
-  font-size: 14px;
-}
-
 ul {
-  width: 90%;
-  max-width: 800px;
-  max-height: 50vh;
+  width: 100%;
+  max-height: 60vh;
   overflow: auto;
-  padding: 0 10px;
-  margin-bottom: 20px;
 }
 
 ul li {
   display: flex;
   align-items: center;
-  width: 400px;
-  box-shadow: var(--inner-shadow);
-  border-radius: 7px;
-  padding: 10px;
-  margin: 20px 0;
-}
-
-ul li input[type=checkbox] {
-  font: inherit;
-  color: currentColor;
-  width: 20px;
-  height: 20px;
-  margin: 0 10px;
-}
-
-ul li .trash {
-  margin-left: auto;
-}
-
-ul li p {
+  width: calc(100% - 30px);
+  padding: 15px;
+  border-bottom: var(--border-bottom);
   position: relative;
 }
 
-ul li .completed::after {
+ul li input[type=text] {
+  border: none;
+  outline: none;
+  margin-left: 10px;
+  position: relative;
+}
+
+ul li .more {
+  margin-left: auto;
+}
+
+ul li .completed {
   content: "";
   position: absolute;
   height: 2px;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  background-color: white;
+  width: 550px;
+  top: calc(50% - 1px);
+  left: 40px;
+  background-color: rgba(0, 0, 0, 0.403);
+}
+
+ul li .completedInput {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .deleteBtnContainer {
-  width: 90%;
-  max-width: 800px;
+  width: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--bg-color);
+  border-radius: 0 0 5px 5px;
 }
 
 .deleteCompleted {
-  border-color: red;
-  color: red;
+  border: none;
   font-size: 16px;
+  color: rgb(119, 119, 119);
 }
