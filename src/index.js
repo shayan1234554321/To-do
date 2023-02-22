@@ -36,12 +36,12 @@ const addAllTasksHTML = () => {
     checkbox.className = 'checkbox';
     checkbox.checked = task.completed;
     const input = document.createElement('input');
-    input.type = "text"
+    input.type = 'text';
     input.value = task.description;
-    const span = document.createElement('span')
-    if(task.completed) {
-      span.className = "completed"
-      input.className = "completedInput"
+    const span = document.createElement('span');
+    if (task.completed) {
+      span.className = 'completed';
+      input.className = 'completedInput';
     }
     const img = document.createElement('img');
     img.src = more;

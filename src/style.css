@@ -57,11 +57,10 @@ header {
   display: flex;
   align-items: center;
   border-bottom: var(--border-bottom);
-  padding-bottom: 20px;
   padding: 20px;
 }
 
-header .icon{
+header .icon {
   margin-left: auto;
 }
 
