@@ -79,8 +79,6 @@ window.addEventListener('DOMContentLoaded', () => {
   addAllTasksToHTML();
 });
 
-
-
 form.addEventListener('submit', ((e) => {
   e.preventDefault();
   create(tasks, addAllTasksToHTML, formInput.value);
