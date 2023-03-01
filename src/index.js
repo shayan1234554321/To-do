@@ -78,9 +78,12 @@ window.addEventListener('DOMContentLoaded', () => {
   addAllTasksToHTML();
 });
 
+const formInput = document.getElementById('formInput');
+
 form.addEventListener('submit', ((e) => {
   e.preventDefault();
-  create(tasks, addAllTasksToHTML);
+  create(tasks, addAllTasksToHTML , formInput.value);
+  formInput.value = ""
 }));
 
 deleteCompleted.addEventListener('click', () => {
