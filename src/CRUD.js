@@ -1,6 +1,5 @@
 import { Save } from './local-storage.js';
 
-
 export const create = (tasks, addAllTasksToHTML, value) => {
   tasks.array.push({
     completed: false,
