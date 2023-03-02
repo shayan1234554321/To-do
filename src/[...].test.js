@@ -2,6 +2,7 @@ import { JSDOM } from 'jsdom';
 import { create, Delete, update } from './CRUD.js';
 import { handleComplete, clearAllComplete } from './interactions.js';
 import 'jest-localstorage-mock';
+
 const tasks = { array: [] };
 const addAllTasksToHTML = () => {
   const list = document.getElementById('list');
