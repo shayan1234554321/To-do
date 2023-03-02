@@ -39,7 +39,6 @@ describe('Testing create and delete', () => {
     const dom = new JSDOM('<ul class="list" id="list"></ul>');
     global.document = dom.window.document;
     create(tasks, addAllTasksToHTML, 'ok');
-    console.log(tasks);
     const li = document.querySelectorAll('#list li');
     expect(li).toHaveLength(1);
   });
