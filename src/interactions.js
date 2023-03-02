@@ -1,8 +1,7 @@
 import { Save } from './local-storage.js';
 
-const handleComplete = (tasks, index, checkValue, checked) => {
+const handleComplete = (tasks, index, checkValue) => {
   tasks.array[index].completed = checkValue;
-  checked();
   Save(tasks.array);
 };
 
