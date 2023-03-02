@@ -11,6 +11,7 @@ const list = document.getElementById('list');
 const form = document.getElementById('form');
 const deleteCompleted = document.getElementById('deleteCompleted');
 const tasks = { array: [] };
+const formInput = document.getElementById('formInput');
 
 // --------------------------- functions --------------------------
 
@@ -80,7 +81,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 form.addEventListener('submit', ((e) => {
   e.preventDefault();
-  create(tasks, addAllTasksToHTML);
+  create(tasks, addAllTasksToHTML, formInput.value);
+  formInput.value = '';
 }));
 
 deleteCompleted.addEventListener('click', () => {

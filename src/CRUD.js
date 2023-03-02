@@ -1,14 +1,11 @@
 import { Save } from './local-storage.js';
 
-const formInput = document.getElementById('formInput');
-
-export const create = (tasks, addAllTasksToHTML) => {
+export const create = (tasks, addAllTasksToHTML, value) => {
   tasks.array.push({
     completed: false,
-    description: formInput.value,
+    description: value,
     index: tasks.array.length,
   });
-  formInput.value = '';
   addAllTasksToHTML();
   Save(tasks.array);
 };
