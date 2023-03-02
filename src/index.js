@@ -53,7 +53,7 @@ const addAllTasksToHTML = () => {
     checkbox.checked = task.completed;
     checkbox.addEventListener('change', (e) => {
       handleComplete(tasks, task.index, e.target.checked);
-      checked()
+      checked();
     });
 
     // ------ Delete icon ------
