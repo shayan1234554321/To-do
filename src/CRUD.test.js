@@ -44,7 +44,6 @@ describe('Testing create and delete', () => {
   });
   test('removing one element', () => {
     Delete(tasks, 0, addAllTasksToHTML);
-    console.log(tasks);
     const li = document.querySelectorAll('#list li');
     expect(li).toHaveLength(0);
   });
