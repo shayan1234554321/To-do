@@ -1,5 +1,6 @@
 import { JSDOM } from 'jsdom';
-import { create, Delete } from './CRUD.js';
+import { create, Delete, update } from './CRUD.js';
+import { handleComplete, clearAllComplete } from './interactions.js';
 import 'jest-localstorage-mock';
 
 const tasks = { array: [] };
@@ -27,9 +28,6 @@ const addAllTasksToHTML = () => {
     // ------ Delete icon ------
     const img = document.createElement('img');
     img.className = 'trash';
-    img.addEventListener('click', () => {
-      Delete(tasks, task.index, addAllTasksToHTML);
-    });
     // ------ appending to html ------
     const li = document.createElement('li');
     li.append(checkbox, input, span, img);
@@ -48,5 +46,27 @@ describe('Testing create and delete', () => {
     Delete(tasks, 0, addAllTasksToHTML);
     const li = document.querySelectorAll('#list li');
     expect(li).toHaveLength(0);
+  });
+  test('Editing Task description works', () => {
+    create(tasks, addAllTasksToHTML, 'ok');
+    expect(tasks.array[0].description).toBe('ok');
+    update(tasks, 0, 'okey');
+    expect(tasks.array[0].description).toBe('okey');
+  });
+  test('updating completed status works', () => {
+    expect(tasks.array[0].completed).toBe(false);
+    handleComplete(tasks, 0, true);
+    expect(tasks.array[0].completed).toBe(true);
+  });
+  test('Clear all completed works', () => {
+    create(tasks, addAllTasksToHTML, '1');
+    create(tasks, addAllTasksToHTML, '2');
+    create(tasks, addAllTasksToHTML, '3');
+    create(tasks, addAllTasksToHTML, '4');
+    handleComplete(tasks, 1, true);
+    handleComplete(tasks, 2, true);
+    clearAllComplete(tasks, addAllTasksToHTML);
+    const li = document.querySelectorAll('#list li');
+    expect(li).toHaveLength(2);
   });
 });
