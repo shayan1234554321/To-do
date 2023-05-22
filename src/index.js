@@ -1,9 +1,9 @@
 // --------------------------- import --------------------------
 import './style.css';
 import trash from '../public/trash.png';
-import { Load } from './local-storage.js';
-import { create, update, Delete } from './CRUD.js';
-import { handleComplete, clearAllComplete } from './interactions.js';
+import { Load } from './module/local-storage.js';
+import { create, update, Delete } from './module/CRUD.js';
+import { handleComplete, clearAllComplete } from './module/interactions.js';
 
 // --------------------------- Variables --------------------------
 
