@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
-import { create, Delete, update } from './CRUD.js';
-import { handleComplete, clearAllComplete } from './interactions.js';
+import { create, Delete, update } from './module/CRUD.js';
+import { handleComplete, clearAllComplete } from './module/interactions.js';
 import 'jest-localstorage-mock';
 
 const tasks = { array: [] };
